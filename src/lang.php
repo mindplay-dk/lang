@@ -31,8 +31,8 @@ abstract class lang
     /**
      * @var string active language code
      */
-    protected static $code;
-
+    protected static $code = self::DEFAULT_LANGUAGE;
+    
     /**
      * @var (string|callable)[][] map where "{domain}/{code}" => translation strings or callables
      */
