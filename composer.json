@@ -1,0 +1,23 @@
+{
+    "name": "mindplay/lang",
+    "type": "library",
+    "description": "ultra-simple, super-lightweight localization facility",
+    "license": "LGPL-3.0+",
+    "authors": [
+        {
+            "name": "Rasmus Schultz",
+            "email": "rasmus@mindplay.dk"
+        }
+    ],
+    "autoload": {
+        "classmap": [
+            "src/lang.php"
+        ]
+    },
+    "require": {
+        "php": ">=5.4.0"
+    },
+    "require-dev": {
+        "mindplay/testies": "dev-master"
+    }
+}
