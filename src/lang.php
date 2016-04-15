@@ -97,7 +97,7 @@ abstract class lang
      */
     public static function domain($domain, $code = null)
     {
-        return function ($text, array $tokens = []) use ($domain, $code) {
+        return function ($text, array $tokens = null) use ($domain, $code) {
             return self::translate($code ?: self::$code, $domain, $text, $tokens);
         };
     }
