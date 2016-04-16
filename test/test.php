@@ -4,6 +4,8 @@ require dirname(__DIR__) . '/vendor/autoload.php';
 
 use mindplay\lang;
 
+configure()->enableCodeCoverage(__DIR__ . '/build/clover.xml', dirname(__DIR__) . '/src');
+
 setup(function () {
     lang::reset();
 });
