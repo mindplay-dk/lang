@@ -19,6 +19,6 @@
     },
     "require-dev": {
         "mindplay/testies": "dev-master",
-        "phpunit/php-code-coverage": "^3"
+        "phpunit/php-code-coverage": ">=2, <4"
     }
 }
