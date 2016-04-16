@@ -4,6 +4,8 @@ mindplay/lang
 This library implements an ultra-simple, super-lightweight localization facility. (~100 SLOC)
 
 [![Build Status](https://travis-ci.org/mindplay-dk/lang.svg?branch=master)](https://travis-ci.org/mindplay-dk/lang)
+[![Code Coverage](https://scrutinizer-ci.com/g/mindplay-dk/lang/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/mindplay-dk/lang/?branch=master)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/mindplay-dk/lang/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/mindplay-dk/lang/?branch=master)
 
 It consists of a single pseudo-namespace with just a few functions, but affords a surprising
 amount of flexibility, including the ability to handle plurality, such as "1 result" vs "5 results",
