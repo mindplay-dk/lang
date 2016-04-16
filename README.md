@@ -3,6 +3,7 @@ mindplay/lang
 
 This library implements an ultra-simple, super-lightweight localization facility. (~100 SLOC)
 
+[![PHP Version](https://img.shields.io/badge/php-5.4%2B-blue.svg)](https://packagist.org/packages/mindplay/lang)
 [![Build Status](https://travis-ci.org/mindplay-dk/lang.svg?branch=master)](https://travis-ci.org/mindplay-dk/lang)
 [![Code Coverage](https://scrutinizer-ci.com/g/mindplay-dk/lang/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/mindplay-dk/lang/?branch=master)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/mindplay-dk/lang/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/mindplay-dk/lang/?branch=master)
