@@ -2,6 +2,7 @@
 
 namespace mindplay;
 
+use ComposerLocator;
 use ReflectionFunction;
 
 /**
@@ -193,7 +194,7 @@ abstract class lang
 
         while (count($domain_names)) {
             $parent_domain = implode('/', $domain_names);
-
+            
             if (isset(self::$paths[$parent_domain])) {
                 $path = self::$paths[$parent_domain] . substr($name, strlen($parent_domain)) . '.php';
 
@@ -203,6 +204,19 @@ abstract class lang
                     break;
                 }
             }
+
+            if (count($domain_names) === 2 && ComposerLocator::isInstalled($parent_domain)) {
+                // attempt mapping by convention 
+                
+                $path = ComposerLocator::getPath($parent_domain)
+                    . "/lang" . substr($name, strlen($parent_domain)) . '.php';
+
+                if (file_exists($path)) {
+                    self::$lang[$name] = require $path;
+                    
+                    break;
+                }
+            } 
 
             array_pop($domain_names);
         }

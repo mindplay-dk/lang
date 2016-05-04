@@ -15,7 +15,8 @@
         ]
     },
     "require": {
-        "php": ">=5.4.0"
+        "php": ">=5.4.0",
+        "mindplay/composer-locator": "^2"
     },
     "require-dev": {
         "mindplay/testies": "dev-master",

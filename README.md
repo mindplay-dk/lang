@@ -32,10 +32,12 @@ mechanism works, you just need to understand the pros and cons of each strategy:
     english source files provide a source of reference for translators.)
 
 Translations are grouped into "translation domains", which map to subfolders and plain PHP files,
-e.g. one file per translation language.
+e.g. one file per every domain/language pair.
 
 By convention, your base translation domain should be your Composer package name, e.g. `{vendor}/{package}`,
-optionally with translation sub-domains nested below those.
+optionally with translation sub-domains nested below those - following this convention obviates the need
+to bootstrap with `lang::register()` at all, if you follow the convention of placing a folder named `lang`
+in the root of your Composer package.
 
 The whole thing is `static`, and if that makes you quibble - relax. Translations *are* after all
 global, in the sense that there's only one translation of each string for any given language.
@@ -50,7 +52,10 @@ use mindplay\lang;
 echo lang::text("foo/bar", "Hello {who}", ["who" => "World"]); // => "Hello World"
 ```
 
-This will translate to the active language, which you can set like this:
+By default (without any configuration; see below) this library will load the file `vendor/foo/bar/en.php` -
+the language file format will be discussed below.
+
+To change the active language, do this:
 
 ```php
 lang::set("en");
@@ -76,8 +81,13 @@ for every call. Note that an optional second argument for the language code will
 function for a specific language. Also note that language files will not actually load until the
 translation function is used - so there are no unpredictable performance implications.
 
-Before the language domain `"foo/bar"` can be translated, you need to register the base path of the
-translation files for the language domain - for example:
+Assuming you follow the convention of using your Composer package name as your root language domain, and
+placing your language files in a folder named `lang` in the root of your package, you do not need to call
+`lang::register()` to configure the root path - the package will use [composer-locator](https://github.com/mindplay-dk/composer-locator)
+to automatically find the root path.
+
+In other cases - or in cases where you wish to override the translation files of an external package in
+your project - you need to register the base path of the translation files for the language domain - for example:
 
 ```php
 lang::register("foo/bar", __DIR__ . "/lang");

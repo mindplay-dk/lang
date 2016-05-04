@@ -117,4 +117,13 @@ test(
     }
 );
 
+test(
+    "can find language domains by folder convention",
+    function () {
+        eq(lang::text("mindplay/lang", "foo"), "baz", "can find root package domain");
+
+        eq(lang::text("mindplay/lang/foo", "foo"), "bar", "can find package sub-domain");
+    }
+);
+
 exit(run());
