@@ -103,6 +103,8 @@ test(
         lang::set("da");
 
         eq($domain("Hello, {world}", ["world" => "World"]), "Hej, World");
+
+        eq($domain("Rename"), "Rename", "regression-test against an edge-case where the rename() function was called");
     }
 );
 

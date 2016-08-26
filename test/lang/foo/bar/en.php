@@ -2,5 +2,6 @@
 
 return [
     'Hello, {world}' => 'Greetings, {world}',
-    '{num} results' => function ($num) { return $num != 1 ? "{$num} results" : "{$num} result"; }
+    '{num} results' => function ($num) { return $num != 1 ? "{$num} results" : "{$num} result"; },
+    'Rename' => 'Rename',
 ];

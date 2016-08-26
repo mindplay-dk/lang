@@ -2,6 +2,7 @@
 
 namespace mindplay;
 
+use Closure;
 use ComposerLocator;
 use ReflectionFunction;
 
@@ -131,7 +132,7 @@ abstract class lang
             ? self::$lang[$name][$text]
             : $text;
 
-        if (is_callable($template)) {
+        if ($template instanceof Closure) {
             // perform translation with a user-defined function:
 
             $args = [];
