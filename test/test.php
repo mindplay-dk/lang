@@ -81,11 +81,15 @@ test(
 test(
     "can switch languages",
     function () {
+        eq(lang::get(), lang::DEFAULT_LANGUAGE);
+        
         lang::register("foo", __DIR__ . '/lang/foo');
 
         eq(lang::text("foo/bar", "Hello, {world}", ["world" => "World"]), "Greetings, World");
 
         lang::set("da");
+        
+        eq(lang::get(), "da");
 
         eq(lang::text("foo/bar", "Hello, {world}", ["world" => "World"]), "Hej, World");
     }
