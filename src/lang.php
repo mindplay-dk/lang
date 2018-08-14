@@ -56,6 +56,16 @@ abstract class lang
     {
         self::$code = $code;
     }
+    
+    /**
+     * Get the current active language code.
+     *
+     * @see set()
+     */
+    public static function get()
+    {
+        return self::$code;
+    }
 
     /**
      * Register the physical base path of language files for a given translation domain name.
@@ -185,7 +195,7 @@ abstract class lang
     }
 
     /**
-     * Internally find a load a given language file.
+     * Internally find and load a given language file.
      *
      * @param string $name full language file base name, e.g. "{domain}/{code}"
      */
